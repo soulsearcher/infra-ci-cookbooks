@@ -3,3 +3,4 @@
 vagrant_ssh_config
 terraform.tfstate
 terraform.tfstate.backup
+.terraform
