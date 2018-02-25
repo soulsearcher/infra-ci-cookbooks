@@ -19,6 +19,7 @@ dependencies:
 
 test:
   pre:
+    - terraform init
     - terraform plan
     - terraform apply
     - cp /etc/hosts .
