@@ -25,6 +25,8 @@ test:
     - cp /etc/hosts .
     - sudo bash -c "cat hosts /tmp/hosts.txt | tee /etc/hosts"
   override:
+    - pwd
+    - cd ${HOME}/infra-ci-cookbooks
     - bundle exec knife solo prepare root@webapp
     - bundle exec knife solo cook root@webapp
     - bundle exec rake spec
