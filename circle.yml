@@ -27,7 +27,7 @@ test:
   override:
     - bundle exec knife solo prepare root@webapp
     - bundle exec knife solo cook root@webapp
-    - bundle exec knife rake spec
+    - bundle exec rake spec
   post:
     - terraform plan -destroy
     - terraform destroy -force
