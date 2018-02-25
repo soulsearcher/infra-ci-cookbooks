@@ -1,6 +1,6 @@
 machine:
   ruby:
-    version: 2.3.6
+    version: 2.0.0
   environment:
     TERRAFORM_VERSION:  0.11.3
 
@@ -25,6 +25,7 @@ test:
     - cp /etc/hosts .
     - sudo bash -c "cat hosts /tmp/hosts.txt | tee /etc/hosts"
   override:
+    - cd infra-ci-cookbooks
     - bundle exec knife solo prepare root@webapp
     - bundle exec knife solo cook root@webapp
     - bundle exec rake spec
