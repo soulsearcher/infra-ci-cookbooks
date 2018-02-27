@@ -28,7 +28,10 @@ test:
     - sleep 30
     - bundle exec knife solo prepare root@webapp
     - bundle exec knife solo cook root@webapp
-    - bundle exec rake spec
+    - bundle exec knife solo prepare root@logapp
+    - bundle exec knife solo cook root@logapp
+    - bundle exec rake spec:webapp
+    - bundle exec rake spec:logapp
   post:
     - terraform plan -destroy
     - terraform destroy -force
