@@ -10,7 +10,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :webapp do |host|
     host.vm.hostname = "webapp"
+    host.vm.network "private_network", ip: "192.168.56.20"
   end
 
-  config.vm.network "private_network", ip: "192.168.56.20"
+  config.vm.define :logapp do |host|
+    host.vm.hostname = "logapp"
+    host.vm.network "private_network", ip: "192.168.56.21"
+  end
 end
