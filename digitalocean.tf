@@ -12,7 +12,7 @@ resource "digitalocean_droplet" "webapp" {
     }
 }
 
-resource "digitalocean_droplet" "webapp" {
+resource "digitalocean_droplet" "logapp" {
     image   = "centos-7-x64"
     name    = "logapp"
     region  = "sgp1"
